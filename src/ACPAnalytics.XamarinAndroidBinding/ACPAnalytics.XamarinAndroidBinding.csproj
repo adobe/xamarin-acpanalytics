@@ -11,7 +11,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ACPAnalytics.XamarinAndroidBinding</RootNamespace>
-    <AssemblyName>ACPAnalytics.XamarinAndroidBinding</AssemblyName>
+    <AssemblyName>Adobe.ACPAnalytics.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Deterministic>True</Deterministic>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
@@ -19,7 +19,7 @@
     <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <PackOnBuild>true</PackOnBuild>
-    <PackageId>ACPAnalytics.XamarinAndroid</PackageId>
+    <PackageId>Adobe.ACPAnalytics.Android</PackageId>
     <PackageVersion>1.2.4</PackageVersion>
     <Authors>Adobe Inc.</Authors>
     <Copyright>Copyright 2020 Adobe All Rights Reserved. NOTICE: Adobe permits you to use, modify, and distribute this file in accordance with the terms of the Adobe license agreement accompanying it.If you have received this file from a source other than Adobe, then your use, modification, or distribution of it requires the prior written permission of Adobe. This file has been modified from its original form.The original license can be viewed in the NOTICES.txt file.</Copyright>
@@ -27,7 +27,7 @@
     <Owners>Adobe Inc.</Owners>
     <PackageProjectUrl>https://github.com/adobe/xamarin-acpanalytics</PackageProjectUrl>
     <Summary>Adobe Experience Platform - Analytics plugin for Xamarin Android.</Summary>
-    <Title>ACPAnalytics.XamarinAndroid</Title>
+    <Title>Adobe.ACPAnalytics.Android</Title>
     <Description>Adobe Experience Platform - Analytics plugin for Xamarin Android.</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -54,8 +54,8 @@
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="ACPCore.XamarinAndroidBinding">
-      <HintPath>Bindings\ACPCore.XamarinAndroidBinding.dll</HintPath>
+    <Reference Include="Adobe.ACPCore.Android">
+      <HintPath>Bindings\Adobe.ACPCore.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
