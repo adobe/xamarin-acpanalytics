@@ -8,7 +8,6 @@ using Android.Widget;
 using Android.OS;
 using Com.Adobe.Marketing.Mobile;
 using Xamarin.Forms;
-using ACPAnalyticsTestApp.Services;
 
 namespace ACPAnalyticsTestApp.Droid
 {

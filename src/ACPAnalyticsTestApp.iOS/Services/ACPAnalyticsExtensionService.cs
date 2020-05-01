@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Foundation;
 using Com.Adobe.Marketing.Mobile;
-using ACPAnalyticsTestApp.Services;
 
 namespace ACPAnalyticsTestApp.iOS
 {

@@ -2,7 +2,6 @@
 using System.IO;
 using System.ComponentModel;
 using Xamarin.Forms;
-using ACPAnalyticsTestApp.Services;
 
 namespace ACPAnalyticsTestApp
 {

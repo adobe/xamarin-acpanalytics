@@ -5,7 +5,6 @@ using Xamarin.Forms;
 using Foundation;
 using UIKit;
 using Com.Adobe.Marketing.Mobile;
-using ACPAnalyticsTestApp.Services;
 
 namespace ACPAnalyticsTestApp.iOS
 {
