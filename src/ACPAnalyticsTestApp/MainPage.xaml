@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ACPAnalyticsTestApp.MainPage">
+    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="20,35,20,20">
+                <!--ACPCore methods-->
+                <Button Text="ACPCore Extension Version" BackgroundColor="LightGray" Clicked="OnCoreExtensionVersionButtonClicked"/>
+                <Button Text="Get Privacy Status" BackgroundColor="LightGray" Clicked="OnGetPrivacyStatusButtonClicked"/>
+                <Button Text="Set Advertising Identifier" BackgroundColor="LightGray" Clicked="OnSetAdvertisingIdentifierButtonClicked"/>
+                <Button Text="Set Log Level" BackgroundColor="LightGray" Clicked="OnSetLogLevelButtonClicked"/>
+                <Button Text="Set Privacy Status" BackgroundColor="LightGray" Clicked="OnSetPrivacyStatusButtonClicked"/>
+                <Button Text="Track Action" BackgroundColor="LightGray" Clicked="OnTrackActionButtonClicked"/>
+                <Button Text="Track State" BackgroundColor="LightGray" Clicked="OnTrackStateButtonClicked"/>
+                <Button Text="Update Configuration" BackgroundColor="LightGray" Clicked="OnUpdateConfigurationButtonClicked"/>
+                <!--ACPAnalytics methods-->
+                <Button Text="ACPAnalytics Extension Version" BackgroundColor="LightGray" Clicked="OnAnalyticsExtensionVersionButtonClicked"/>
+                <Button Text="Clear Queue" BackgroundColor="LightGray" Clicked="OnClearQueueButtonClicked"/>
+                <Button Text="Get Tracking Identifier" BackgroundColor="LightGray" Clicked="OnGetTrackingIdentifierButtonClicked"/>
+                <Button Text="Get Visitor Identifier" BackgroundColor="LightGray" Clicked="OnGetVisitorIdentifierButtonClicked"/>
+                <Button Text="Get Queue Size" BackgroundColor="LightGray" Clicked="OnGetQueueSizeButtonClicked"/>
+                <Button Text="Set Visitor Identifier" BackgroundColor="LightGray" Clicked="OnSetVisitorIdentifierButtonClicked"/>
+                <Button Text="Send Queued Hits" BackgroundColor="LightGray" Clicked="OnSendQueuedHitsButtonClicked"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
