@@ -4,6 +4,7 @@
         <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
             <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="20,35,20,20">
                 <!--ACPCore methods-->
+                <Label Text="ACPCore" />
                 <Button Text="ACPCore Extension Version" BackgroundColor="LightGray" Clicked="OnCoreExtensionVersionButtonClicked"/>
                 <Button Text="Get Privacy Status" BackgroundColor="LightGray" Clicked="OnGetPrivacyStatusButtonClicked"/>
                 <Button Text="Set Advertising Identifier" BackgroundColor="LightGray" Clicked="OnSetAdvertisingIdentifierButtonClicked"/>
@@ -13,6 +14,7 @@
                 <Button Text="Track State" BackgroundColor="LightGray" Clicked="OnTrackStateButtonClicked"/>
                 <Button Text="Update Configuration" BackgroundColor="LightGray" Clicked="OnUpdateConfigurationButtonClicked"/>
                 <!--ACPAnalytics methods-->
+                <Label Text="ACPAnalytics" />
                 <Button Text="ACPAnalytics Extension Version" BackgroundColor="LightGray" Clicked="OnAnalyticsExtensionVersionButtonClicked"/>
                 <Button Text="Clear Queue" BackgroundColor="LightGray" Clicked="OnClearQueueButtonClicked"/>
                 <Button Text="Get Tracking Identifier" BackgroundColor="LightGray" Clicked="OnGetTrackingIdentifierButtonClicked"/>
