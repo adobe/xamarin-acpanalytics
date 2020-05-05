@@ -26,6 +26,9 @@ namespace ACPAnalyticsTestApp.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            // set the wrapper type
+            ACPCore.SetWrapperType(ACPMobileWrapperType.Xamarin);
+
             // set log level
             ACPCore.LogLevel = ACPMobileLogLevel.Verbose;
 
