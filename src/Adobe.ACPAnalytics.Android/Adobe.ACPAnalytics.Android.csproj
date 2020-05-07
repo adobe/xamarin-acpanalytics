@@ -20,7 +20,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Adobe.ACPAnalytics.Android</PackageId>
-    <PackageVersion>1.2.4</PackageVersion>
+    <PackageVersion>0.0.1</PackageVersion>
     <Authors>Adobe Inc.</Authors>
     <Copyright>Copyright 2020 Adobe All Rights Reserved. NOTICE: Adobe permits you to use, modify, and distribute this file in accordance with the terms of the Adobe license agreement accompanying it.If you have received this file from a source other than Adobe, then your use, modification, or distribution of it requires the prior written permission of Adobe. This file has been modified from its original form.The original license can be viewed in the NOTICES.txt file.</Copyright>
     <PackageLicenseUrl>https://github.com/adobe/xamarin-acpanalytics/blob/master/LICENSE</PackageLicenseUrl>
@@ -29,7 +29,6 @@
     <Summary>Adobe Experience Platform - Analytics plugin for Xamarin Android.</Summary>
     <Title>Adobe.ACPAnalytics.Android</Title>
     <Description>Adobe Experience Platform - Analytics plugin for Xamarin Android.</Description>
-    <BaseDirectory>..\Adobe.ACPAnalytics.Android</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
