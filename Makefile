@@ -18,7 +18,7 @@ clean: msbuild-clean clean-folders setup
 
 # Makes ACPAnalytics bindings and NuGet package. The binding (.dll) will be available in BindingDirectory/bin/Debug
 # The NuGet package is created in the same directory but then moved to src/bin.
-all:
+release:
 	cd src/Adobe.ACPAnalytics.Android/ && msbuild -t:pack
 	cd src/Adobe.ACPAnalytics.iOS/ && msbuild -t:build	
 	mkdir bin

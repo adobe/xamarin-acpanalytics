@@ -13,118 +13,262 @@
 - [Contributing](#contributing)  
 - [Licensing](#licensing)  
 
-# TODO
-update me for xamarin
-
 ## Prerequisites  
 
-Cordova is distributed via [Node Package Management](https://www.npmjs.com/) (aka - `npm`).  
-
-In order to install and build Cordova applications you will need to have `Node.js` installed. [Install Node.js](https://nodejs.org/en/).  
-
-Once Node.js is installed, you can install the Cordova framework from terminal:  
-
-```  
-sudo npm install -g cordova  
-```  
+Xamarin development requires the installation of [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/). An Apple developer account and the latest version of Xcode (available from the App Store) are required if you are [building an iOS app](https://docs.microsoft.com/en-us/visualstudio/mac/installation?view=vsmac-2019).
 
 ## Installation
 
-To start using the Analytics plugin for Cordova, navigate to the directory of your Cordova app and install the plugin:
+# TODO (update after NuGet package is available on nuget.org)
+
+**Package Manager Installation**
+
+TODO
+
+**Manual installation**
+
+A local ACPAnalytics NuGet package can be created via the included Makefile. If building for the first time, run:
+
 ```
-cordova plugin add https://github.com/adobe/cordova-acpanalytics.git
+make setup
 ```
-Check out the documentation for help with APIs
+
+followed by:
+
+```
+make release
+```
+
+The created NuGet packages can be found in the `bin` directory and can be added as reference to a Xamarin project.
 
 ## Usage
 
-##### Getting the SDK version:
-```js
-ACPAnalytics.extensionVersion(function(version){  
-    console.log(version);
-}, function(error){  
-    console.log(error);  
-});
+### [Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+
+The following usage instructions assume [Xamarin Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms) is being used to develop a multiplatform mobile app.
+
+##### Getting Analytics version:
+
+**iOS**
+
+```c#
+public TaskCompletionSource<string> GetExtensionVersionAnalytics()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  stringOutput.SetResult(ACPAnalytics.ExtensionVersion);
+  return stringOutput;
+}
 ```
+
+**Android**
+
+```c#
+public TaskCompletionSource<string> GetExtensionVersionAnalytics()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  stringOutput.SetResult(ACPAnalytics.ExtensionVersion());
+  return stringOutput;
+}
+```
+
 ##### Registering the extension with ACPCore:  
 
- > Note: It is required to initialize the SDK via native code inside your AppDelegate and MainApplication for iOS and Android respectively. For more information see how to initialize [Core](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk).  
-  ##### **iOS**  
-```objective-c
-#import "ACPAnalytics.h"  
-[ACPAnalytics registerExtension];  
-```  
-  ##### **Android:**  
-```java
-import com.adobe.marketing.mobile.Analytics;  
-Analytics.registerExtension();
+  ##### **iOS** and Android
+```c#
+using Com.Adobe.Marketing.Mobile;
+
+ACPAnalytics.RegisterExtension();
+ACPCore.Start(null);
 ```
 ##### Get the tracking identifier:
-```js
-ACPAnalytics.getTrackingIdentifier(function(trackingId) {  
-    console.log(trackingId);
-}, function(error){  
-    console.log(error);  
-});
+
+**iOS**
+
+```c#
+public TaskCompletionSource<string> GetTrackingIdentifier()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  Action<NSString> callback = new Action<NSString>(handleCallback);
+  ACPAnalytics.GetTrackingIdentifier(callback);
+  stringOutput.SetResult("");
+  return stringOutput;
+}
+
+private void handleCallback(NSString content)
+{
+  Console.WriteLine("String callback: " + content);
+}
 ```
+
+**Android**
+
+```c#
+public TaskCompletionSource<string> GetTrackingIdentifier()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  ACPAnalytics.GetTrackingIdentifier(new StringCallback());
+  stringOutput.SetResult("");
+  return stringOutput;
+}
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("String callback content: " + stringContent);
+    }
+    else
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
+}
+```
+
 ##### Send queued hits:
-```js
-ACPAnalytics.sendQueuedHits(function(response){  
-    console.log("Success in sendQueuedHits");  
-}, function(error){  
-    console.log(error);  
-});  
+
+**iOS and Android**
+
+```c#
+public TaskCompletionSource<string> SendQueuedHits()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  ACPAnalytics.SendQueuedHits();
+  stringOutput.SetResult("completed");
+  return stringOutput;
+}
 ```
+
 ##### Get the queue size:
-```js
-ACPAnalytics.getQueueSize(function(size) {  
-    console.log(size);
-}, function(error){  
-    console.log(error);  
-});
+
+**iOS**
+
+```c#
+public TaskCompletionSource<string> GetQueueSize()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  Action<nuint> callback = new Action<nuint>(handleCallback);
+  ACPAnalytics.GetQueueSize(callback);
+  stringOutput.SetResult("");
+  return stringOutput;
+}
+
+private void handleCallback(nuint value)
+{
+  Console.WriteLine("Queue size: " + value);
+}
 ```
+
+**Android**
+
+```c#
+public TaskCompletionSource<string> GetQueueSize()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  ACPAnalytics.GetQueueSize(new StringCallback());
+  stringOutput.SetResult("");
+  return stringOutput;
+}
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("String callback content: " + stringContent);
+    }
+    else
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
+}
+```
+
 ##### Clear queued hits:
-```js
-ACPAnalytics.clearQueue(function(response){  
-    console.log("Success in clearing queue");  
-}, function(error){  
-    console.log(error);  
-});
+
+**iOS and Android**
+
+```c#
+public TaskCompletionSource<string> ClearQueue()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  ACPAnalytics.ClearQueue(); 
+  stringOutput.SetResult("");
+  return stringOutput;
+}
 ```
+
 ##### Set the custom visitor identifier:
+
+**iOS and Android**
+
 ```js
-ACPAnalytics.setVisitorIdentifier(customVisitorId, function(response) {  
-    console.log("Success in setting visitor Id with " + customVisitorId);  
-}, function(error){  
-    console.log(error);  
-});
+public TaskCompletionSource<string> SetVisitorIdentifier()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  ACPAnalytics.SetVisitorIdentifier("testVisitorIdentifier");
+  stringOutput.SetResult("completed");
+  return stringOutput;
+}
 ```
 ##### Get the custom visitor identifier:
-```js
-ACPAnalytics.getVisitorIdentifier(function(visitorId) {  
-    console.log(visitorId);
-}, function(error){  
-    console.log(error);  
-});
-```  
 
-## Running Tests
-Install cordova-paramedic `https://github.com/apache/cordova-paramedic`
-```bash
-npm install -g cordova-paramedic
+**iOS**
+
+```c#
+public TaskCompletionSource<string> GetVisitorIdentifier()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  Action<NSString> callback = new Action<NSString>(handleCallback);
+  ACPAnalytics.GetVisitorIdentifier(callback);
+  stringOutput.SetResult("");
+  return stringOutput;
+}
+
+private void handleCallback(NSString content)
+{
+  Console.WriteLine("String callback: " + content);
+}
 ```
 
-Run the tests
+**Android**
+
+```c#
+public TaskCompletionSource<string> GetVisitorIdentifier()
+{
+  stringOutput = new TaskCompletionSource<string>();
+  ACPAnalytics.GetVisitorIdentifier(new StringCallback());
+  stringOutput.SetResult("");
+  return stringOutput;
+}
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("String callback content: " + stringContent);
+    }
+    else
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
+}
 ```
-cordova-paramedic --platform ios --plugin . --verbose
-```
-```
-cordova-paramedic --platform android --plugin . --verbose
-```
+
+##### Running Tests
+
+iOS and Android unit tests are included within the ACPCore binding solution. Currently they must be built from within Visual Studio then manually triggered from the unit test app that is deployed to an iOS or Android device.
 
 ## Sample App
 
-A Cordova app for testing the plugin is located in the `https://github.com/adobe/cordova-acpsample`. The app is configured for both iOS and Android platforms.  
+A Xamarin Forms sample app is provided in the Xamarin ACPAnalytics solution file.
 
 ## Contributing
 Looking to contribute to this project? Please review our [Contributing guidelines](.github/CONTRIBUTING.md) prior to opening a pull request.
