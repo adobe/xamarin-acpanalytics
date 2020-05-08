@@ -55,7 +55,6 @@ namespace ACPAnalyticsiOSUnitTests
 
             // setup for all tests
             CountdownEvent latch = new CountdownEvent(1);
-            ACPCore.SetWrapperType(ACPMobileWrapperType.Xamarin);
             ACPCore.LogLevel = ACPMobileLogLevel.Verbose;
             ACPAnalytics.RegisterExtension();
             ACPIdentity.RegisterExtension();
