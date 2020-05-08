@@ -32,7 +32,7 @@ namespace ACPAnalyticsiOSUnitTests
         public void GetACPAnalyticsExtensionVersion_Returns_CorrectVersion()
         {
             // verify
-            Assert.True(ACPAnalytics.ExtensionVersion == "2.2.3");
+            Assert.That(ACPAnalytics.ExtensionVersion, Is.EqualTo("2.2.3"));
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace ACPAnalyticsiOSUnitTests
             latch.Wait();
             latch.Dispose();
             // verify
-            Assert.True(queueSize == 2);
+            Assert.That(queueSize, Is.EqualTo(2));
         }
 
         [Test]
@@ -83,7 +83,7 @@ namespace ACPAnalyticsiOSUnitTests
             latch.Wait();
             latch.Dispose();
             // verify
-            Assert.True(queueSize == 3);
+            Assert.That(queueSize, Is.EqualTo(3));
             // test
             ACPAnalytics.ClearQueue();
             latch = new CountdownEvent(1);
@@ -95,7 +95,7 @@ namespace ACPAnalyticsiOSUnitTests
             latch.Wait();
             latch.Dispose();
             // verify
-            Assert.True(queueSize == 0);
+            Assert.That(queueSize, Is.EqualTo(0));
         }
 
         [Test]
@@ -103,19 +103,19 @@ namespace ACPAnalyticsiOSUnitTests
         {
             // setup
             var latch = new CountdownEvent(1);
-            var retrievedIdentifier = "";
-            var expectedIdentifier = "someVisitorIdentifier";
+            string retrievedIdentifier = "";
+            string expectedIdentifier = "someVisitorIdentifier";
             ACPAnalytics.SetVisitorIdentifier(expectedIdentifier);
             // test
             ACPAnalytics.GetVisitorIdentifier(callback =>
             {
-                retrievedIdentifier = callback;
+                retrievedIdentifier = callback.ToString();
                 latch.Signal();
             });
             latch.Wait();
             latch.Dispose();
             // verify
-            Assert.True(retrievedIdentifier == expectedIdentifier);
+            Assert.That(retrievedIdentifier, Is.EqualTo(expectedIdentifier));
         }
     }
 }

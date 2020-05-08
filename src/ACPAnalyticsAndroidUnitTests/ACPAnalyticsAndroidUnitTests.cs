@@ -20,14 +20,14 @@ namespace ACPAnalyticsAndroidUnitTests
     [TestFixture]
     public class ACPAnalyticsAndroidUnitTests
     {
-        static int retrivedQueueSize;
+        static int retrievedQueueSize;
         static string retrievedVisitorIdentifier;
         static CountdownEvent latch;
 
         [SetUp]
         public void Setup()
         {
-            retrivedQueueSize = 0;
+            retrievedQueueSize = 0;
             retrievedVisitorIdentifier = "";
             latch = null;
             ACPAnalytics.ClearQueue();
@@ -39,7 +39,7 @@ namespace ACPAnalyticsAndroidUnitTests
         public void GetACPAnalyticsExtensionVersion_Returns_CorrectVersion()
         {
             // verify
-            Assert.True(ACPAnalytics.ExtensionVersion() == "1.2.4");
+            Assert.That(ACPAnalytics.ExtensionVersion(), Is.EqualTo("1.2.4"));
         }
 
         [Test]
@@ -47,6 +47,7 @@ namespace ACPAnalyticsAndroidUnitTests
         {
             // setup
             CountdownEvent latch = new CountdownEvent(1);
+            int expectedSize = 2;
             Dictionary<string, Java.Lang.Object> config = new Dictionary<string, Java.Lang.Object>();
             config.Add("analytics.batchLimit", 5);
             ACPCore.UpdateConfiguration(config);
@@ -57,13 +58,14 @@ namespace ACPAnalyticsAndroidUnitTests
             latch.Wait();
             latch.Dispose();
             // verify
-            Assert.True(retrivedQueueSize == 2);
+            Assert.That(retrievedQueueSize, Is.EqualTo(expectedSize));
         }
 
         [Test]
         public void ClearQueue_Clears_QueuedHits()
         {
             // setup
+            int expectedSize = 3;
             CountdownEvent latch = new CountdownEvent(1);
             Dictionary<string, Java.Lang.Object> config = new Dictionary<string, Java.Lang.Object>();
             config.Add("analytics.batchLimit", 5);
@@ -76,15 +78,16 @@ namespace ACPAnalyticsAndroidUnitTests
             latch.Wait();
             latch.Dispose();
             // verify
-            Assert.True(retrivedQueueSize == 3);
+            Assert.That(retrievedQueueSize, Is.EqualTo(expectedSize));
             // test
+            expectedSize = 0;
             ACPAnalytics.ClearQueue();
             latch = new CountdownEvent(1);
             ACPAnalytics.GetQueueSize(new QueueSizeCallback());
             latch.Wait();
             latch.Dispose();
             // verify
-            Assert.True(retrivedQueueSize == 0);
+            Assert.That(retrievedQueueSize, Is.EqualTo(expectedSize));
         }
 
         [Test]
@@ -100,7 +103,7 @@ namespace ACPAnalyticsAndroidUnitTests
             latch.Wait();
             latch.Dispose();
             // verify
-            Assert.True(retrievedIdentifier == expectedIdentifier);
+            Assert.That(retrievedIdentifier, Is.EqualTo(expectedIdentifier));
         }
 
         // callbacks
@@ -110,7 +113,7 @@ namespace ACPAnalyticsAndroidUnitTests
             {
                 if (queueSize != null)
                 {
-                    retrivedQueueSize = (int)queueSize;
+                    retrievedQueueSize = (int)queueSize;
                 }
                 else
                 {
