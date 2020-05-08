@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<metadata>
-<!-- Use ACPAnalytics for Xamarin plugin name -->
-    <attr path="/api/package[@name='com.adobe.marketing.mobile']/class[@name='Analytics']" name="managedName">ACPAnalytics</attr>
-</metadata>

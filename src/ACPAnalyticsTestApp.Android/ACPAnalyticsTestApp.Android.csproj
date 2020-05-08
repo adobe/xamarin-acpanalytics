@@ -58,7 +58,7 @@
       <HintPath>Bindings\Adobe.ACPLifecycle.Android.dll</HintPath>
     </Reference>
     <Reference Include="Adobe.ACPCore.Android">
-      <HintPath>..\ACPAnalytics.XamarinAndroidBinding\Bindings\Adobe.ACPCore.Android.dll</HintPath>
+      <HintPath>..\Adobe.ACPAnalytics.Android\Bindings\Adobe.ACPCore.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -102,9 +102,9 @@
       <Project>{005E3441-75A4-49A6-8D2A-419951479212}</Project>
       <Name>ACPAnalyticsTestApp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ACPAnalytics.XamarinAndroidBinding\ACPAnalytics.XamarinAndroidBinding.csproj">
+    <ProjectReference Include="..\Adobe.ACPAnalytics.Android\Adobe.ACPAnalytics.Android.csproj">
       <Project>{F48AD989-239B-4075-92D6-E6707EF4FF02}</Project>
-      <Name>ACPAnalytics.XamarinAndroidBinding</Name>
+      <Name>Adobe.ACPAnalytics.Android</Name>
     </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -335,7 +335,7 @@ ASALocalRun/
 HelloXamarin/HelloXamarin/Resources/Resource.designer.cs
 
 # Generated .txt "readme" files
-src/ACPAnalytics.XamarinAndroidBinding/Additions/AboutAdditions.txt
-src/ACPAnalytics.XamarinAndroidBinding/Jars/AboutJars.txt
+src/Adobe.ACPAnalytics.Android/Additions/AboutAdditions.txt
+src/Adobe.ACPAnalytics.Android/Jars/AboutJars.txt
 src/ACPAnalyticsTestApp.Android/Assets/AboutAssets.txt
 src/ACPAnalyticsTestApp.Android/Resources/AboutResources.txt

@@ -123,7 +123,7 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
     <Reference Include="Adobe.ACPCore.iOS">
-      <HintPath>..\Adobe.ACPAnalytics.iOS\Bindings\Adobe.ACPCore.iOS.dll</HintPath>
+      <HintPath>Bindings\Adobe.ACPCore.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
