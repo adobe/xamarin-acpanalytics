@@ -46,7 +46,7 @@ namespace ACPAnalyticsAndroidUnitTests
         public void GetQueueSize_Returns_CorrectQueueSize()
         {
             // setup
-            CountdownEvent latch = new CountdownEvent(1);
+            latch = new CountdownEvent(1);
             int expectedSize = 2;
             Dictionary<string, Java.Lang.Object> config = new Dictionary<string, Java.Lang.Object>();
             config.Add("analytics.batchLimit", 5);
@@ -66,7 +66,7 @@ namespace ACPAnalyticsAndroidUnitTests
         {
             // setup
             int expectedSize = 3;
-            CountdownEvent latch = new CountdownEvent(1);
+            latch = new CountdownEvent(1);
             Dictionary<string, Java.Lang.Object> config = new Dictionary<string, Java.Lang.Object>();
             config.Add("analytics.batchLimit", 5);
             ACPCore.UpdateConfiguration(config);
@@ -94,8 +94,7 @@ namespace ACPAnalyticsAndroidUnitTests
         public void GetCustomVisitorIdentifier_Gets_PreviouslySetCustomVisitorIdentifier()
         {
             // setup
-            var latch = new CountdownEvent(1);
-            var retrievedIdentifier = "";
+            latch = new CountdownEvent(1);
             var expectedIdentifier = "someVisitorIdentifier";
             ACPAnalytics.SetVisitorIdentifier(expectedIdentifier);
             // test
@@ -103,7 +102,7 @@ namespace ACPAnalyticsAndroidUnitTests
             latch.Wait();
             latch.Dispose();
             // verify
-            Assert.That(retrievedIdentifier, Is.EqualTo(expectedIdentifier));
+            Assert.That(retrievedVisitorIdentifier, Is.EqualTo(expectedIdentifier));
         }
 
         // callbacks
@@ -119,7 +118,7 @@ namespace ACPAnalyticsAndroidUnitTests
                 {
                     Console.WriteLine("null content in queue size callback");
                 }
-                if(latch != null)
+                if (latch != null)
                 {
                     latch.Signal();
                 }
@@ -133,6 +132,7 @@ namespace ACPAnalyticsAndroidUnitTests
                 if (visitorIdentifier != null)
                 {
                     retrievedVisitorIdentifier = (string)visitorIdentifier;
+                    Console.WriteLine("retrieved visitor identifier: " + retrievedVisitorIdentifier);
                 }
                 else
                 {
