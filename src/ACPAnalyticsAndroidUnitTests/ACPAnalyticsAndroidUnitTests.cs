@@ -20,9 +20,12 @@ namespace ACPAnalyticsAndroidUnitTests
     [TestFixture]
     public class ACPAnalyticsAndroidUnitTests
     {
+        // CountDownEvent latch
+        static CountdownEvent latch;
+
+        // static vars to store data retrieved via callback
         static int retrievedQueueSize;
         static string retrievedVisitorIdentifier;
-        static CountdownEvent latch;
 
         [SetUp]
         public void Setup()
