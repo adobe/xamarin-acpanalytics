@@ -8,8 +8,8 @@ msbuild-clean:
 	cd src && msbuild -t:clean
 
 clean-folders:
-	rm -rf src/Adobe.ACPAnalytics.Android//obj
-	rm -rf src/Adobe.ACPAnalytics.Android//bin/Debug
+	rm -rf src/Adobe.ACPAnalytics.Android/obj
+	rm -rf src/Adobe.ACPAnalytics.Android/bin/Debug
 	rm -rf src/Adobe.ACPAnalytics.iOS/bin/Debug
 	rm -rf src/Adobe.ACPAnalytics.iOS/obj
 	rm -rf bin
@@ -22,5 +22,5 @@ release:
 	cd src/Adobe.ACPAnalytics.Android/ && msbuild -t:pack
 	cd src/Adobe.ACPAnalytics.iOS/ && msbuild -t:build	
 	mkdir bin
-	cp src/Adobe.ACPAnalytics.Android//bin/Debug/*.nupkg ./bin
+	cp src/Adobe.ACPAnalytics.Android/bin/Debug/*.nupkg ./bin
 	cp src/Adobe.ACPAnalytics.iOS/bin/Debug/*.nupkg ./bin
