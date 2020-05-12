@@ -47,13 +47,7 @@ The created NuGet packages can be found in the `bin` directory and can be added 
 
 ##### Getting Analytics version:
 
-**iOS**
-
-```c#
-Console.WriteLine(ACPAnalytics.ExtensionVersion);
-```
-
-**Android**
+**iOS and Android**
 
 ```c#
 Console.WriteLine(ACPAnalytics.ExtensionVersion());
