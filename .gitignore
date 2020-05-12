@@ -339,3 +339,5 @@ src/Adobe.ACPAnalytics.Android/Additions/AboutAdditions.txt
 src/Adobe.ACPAnalytics.Android/Jars/AboutJars.txt
 src/ACPAnalyticsTestApp.Android/Assets/AboutAssets.txt
 src/ACPAnalyticsTestApp.Android/Resources/AboutResources.txt
+src/ACPAnalyticsAndroidUnitTests/Assets/AboutAssets.txt
+src/ACPAnalyticsAndroidUnitTests/Resources/AboutResources.txt

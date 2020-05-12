@@ -29,7 +29,7 @@ namespace ACPAnalyticsTestApp.iOS
         public TaskCompletionSource<string> GetExtensionVersionCore()
         {
             stringOutput = new TaskCompletionSource<string>();
-            stringOutput.SetResult(ACPCore.ExtensionVersion);
+            stringOutput.SetResult(ACPCore.ExtensionVersion());
             return stringOutput;
         }
 
@@ -107,7 +107,7 @@ namespace ACPAnalyticsTestApp.iOS
         public TaskCompletionSource<string> GetExtensionVersionAnalytics()
         {
             stringOutput = new TaskCompletionSource<string>();
-            stringOutput.SetResult(ACPAnalytics.ExtensionVersion);
+            stringOutput.SetResult(ACPAnalytics.ExtensionVersion());
             return stringOutput;
         }
 

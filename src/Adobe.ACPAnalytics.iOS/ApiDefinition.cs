@@ -27,7 +27,7 @@ namespace Com.Adobe.Marketing.Mobile
 		// +(NSString * _Nonnull)extensionVersion;
 		[Static]
 		[Export("extensionVersion")]
-		string ExtensionVersion { get; }
+		string ExtensionVersion();
 
 		// +(void)getQueueSize:(void (^ _Nonnull)(NSUInteger))callback;
 		[Static]
