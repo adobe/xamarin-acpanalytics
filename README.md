@@ -2,7 +2,7 @@
 # Adobe Experience Platform - Analytics plugin for Xamarin apps
 
 [![CI](https://github.com/adobe/xamarin-acpanalytics/workflows/CI/badge.svg)](https://github.com/adobe/xamarin-acpanalytics/actions)
-[![npm](https://img.shields.io/npm/v/@adobe/xamarin-acpanalytics)](https://www.npmjs.com/package/@adobe/xamarin-acpanalytics)
+
 [![GitHub](https://img.shields.io/github/license/adobe/xamarin-acpanalytics)](https://github.com/adobe/xamarin-acpanalytics/blob/master/LICENSE)
 
 - [Prerequisites](#prerequisites)  
@@ -39,36 +39,24 @@ followed by:
 make release
 ```
 
-The created NuGet packages can be found in the `bin` directory and can be added as reference to a Xamarin project.
+The created NuGet packages can be found in the `bin` directory and can be added as a reference to a Xamarin project.
 
 ## Usage
 
 ### [Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-
-The following usage instructions assume [Xamarin Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms) is being used to develop a multiplatform mobile app.
 
 ##### Getting Analytics version:
 
 **iOS**
 
 ```c#
-public TaskCompletionSource<string> GetExtensionVersionAnalytics()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  stringOutput.SetResult(ACPAnalytics.ExtensionVersion);
-  return stringOutput;
-}
+Console.WriteLine(ACPAnalytics.ExtensionVersion);
 ```
 
 **Android**
 
 ```c#
-public TaskCompletionSource<string> GetExtensionVersionAnalytics()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  stringOutput.SetResult(ACPAnalytics.ExtensionVersion());
-  return stringOutput;
-}
+Console.WriteLine(ACPAnalytics.ExtensionVersion());
 ```
 
 ##### Registering the extension with ACPCore:  
@@ -85,14 +73,8 @@ ACPCore.Start(null);
 **iOS**
 
 ```c#
-public TaskCompletionSource<string> GetTrackingIdentifier()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  Action<NSString> callback = new Action<NSString>(handleCallback);
-  ACPAnalytics.GetTrackingIdentifier(callback);
-  stringOutput.SetResult("");
-  return stringOutput;
-}
+Action<NSString> callback = new Action<NSString>(handleCallback);
+ACPAnalytics.GetTrackingIdentifier(callback);
 
 private void handleCallback(NSString content)
 {
@@ -103,13 +85,7 @@ private void handleCallback(NSString content)
 **Android**
 
 ```c#
-public TaskCompletionSource<string> GetTrackingIdentifier()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  ACPAnalytics.GetTrackingIdentifier(new StringCallback());
-  stringOutput.SetResult("");
-  return stringOutput;
-}
+ACPAnalytics.GetTrackingIdentifier(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
 {
@@ -132,13 +108,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 **iOS and Android**
 
 ```c#
-public TaskCompletionSource<string> SendQueuedHits()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  ACPAnalytics.SendQueuedHits();
-  stringOutput.SetResult("completed");
-  return stringOutput;
-}
+ACPAnalytics.SendQueuedHits();
 ```
 
 ##### Get the queue size:
@@ -146,14 +116,8 @@ public TaskCompletionSource<string> SendQueuedHits()
 **iOS**
 
 ```c#
-public TaskCompletionSource<string> GetQueueSize()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  Action<nuint> callback = new Action<nuint>(handleCallback);
-  ACPAnalytics.GetQueueSize(callback);
-  stringOutput.SetResult("");
-  return stringOutput;
-}
+Action<nuint> callback = new Action<nuint>(handleCallback);
+ACPAnalytics.GetQueueSize(callback);
 
 private void handleCallback(nuint value)
 {
@@ -164,13 +128,7 @@ private void handleCallback(nuint value)
 **Android**
 
 ```c#
-public TaskCompletionSource<string> GetQueueSize()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  ACPAnalytics.GetQueueSize(new StringCallback());
-  stringOutput.SetResult("");
-  return stringOutput;
-}
+ACPAnalytics.GetQueueSize(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
 {
@@ -193,13 +151,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 **iOS and Android**
 
 ```c#
-public TaskCompletionSource<string> ClearQueue()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  ACPAnalytics.ClearQueue(); 
-  stringOutput.SetResult("");
-  return stringOutput;
-}
+ACPAnalytics.ClearQueue(); 
 ```
 
 ##### Set the custom visitor identifier:
@@ -207,27 +159,15 @@ public TaskCompletionSource<string> ClearQueue()
 **iOS and Android**
 
 ```js
-public TaskCompletionSource<string> SetVisitorIdentifier()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  ACPAnalytics.SetVisitorIdentifier("testVisitorIdentifier");
-  stringOutput.SetResult("completed");
-  return stringOutput;
-}
+ACPAnalytics.SetVisitorIdentifier("testVisitorIdentifier");
 ```
 ##### Get the custom visitor identifier:
 
 **iOS**
 
 ```c#
-public TaskCompletionSource<string> GetVisitorIdentifier()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  Action<NSString> callback = new Action<NSString>(handleCallback);
-  ACPAnalytics.GetVisitorIdentifier(callback);
-  stringOutput.SetResult("");
-  return stringOutput;
-}
+Action<NSString> callback = new Action<NSString>(handleCallback);
+ACPAnalytics.GetVisitorIdentifier(callback);
 
 private void handleCallback(NSString content)
 {
@@ -238,13 +178,7 @@ private void handleCallback(NSString content)
 **Android**
 
 ```c#
-public TaskCompletionSource<string> GetVisitorIdentifier()
-{
-  stringOutput = new TaskCompletionSource<string>();
-  ACPAnalytics.GetVisitorIdentifier(new StringCallback());
-  stringOutput.SetResult("");
-  return stringOutput;
-}
+ACPAnalytics.GetVisitorIdentifier(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
 {
