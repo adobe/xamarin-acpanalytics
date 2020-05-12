@@ -59,13 +59,6 @@
       <LinkerFlags>-lc++ -lsqlite3 -lz</LinkerFlags>
       <Frameworks>UIKit SystemConfiguration</Frameworks>
     </NativeReference>
-    <NativeReference Include="ACPCore.framework">
-      <Kind>Framework</Kind>
-      <ForceLoad>True</ForceLoad>
-      <IsCxx>True</IsCxx>
-      <Frameworks>UIKit SystemConfiguration WebKit UserNotifications</Frameworks>
-      <LinkerFlags>-lc++ -lsqlite3 -lz</LinkerFlags>
-    </NativeReference>
     <NativeReference Include="libACPAnalytics_iOS.a">
       <Kind>Static</Kind>
       <ForceLoad>True</ForceLoad>
