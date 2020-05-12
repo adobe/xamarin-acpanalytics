@@ -91,9 +91,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\AboutAssets.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Adobe.ACPAnalytics.Android\Adobe.ACPAnalytics.Android.csproj">
       <Project>{F48AD989-239B-4075-92D6-E6707EF4FF02}</Project>
       <Name>Adobe.ACPAnalytics.Android</Name>
