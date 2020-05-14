@@ -36,7 +36,7 @@ namespace ACPAnalyticsTestApp.iOS
         public TaskCompletionSource<string> GetPrivacyStatus()
         {
             stringOutput = new TaskCompletionSource<string>();
-            Action<ACPMobilePrivacyStatus> callback = new Action<ACPMobilePrivacyStatus>(handleCallback);
+            var callback = new Action<ACPMobilePrivacyStatus>(handleCallback);
             ACPCore.GetPrivacyStatus(callback);
             stringOutput.SetResult("completed");
             return stringOutput;
@@ -122,7 +122,7 @@ namespace ACPAnalyticsTestApp.iOS
         public TaskCompletionSource<string> GetTrackingIdentifier()
         {
             stringOutput = new TaskCompletionSource<string>();
-            Action<NSString> callback = new Action<NSString>(handleCallback);
+            var callback = new Action<NSString>(handleCallback);
             ACPAnalytics.GetTrackingIdentifier(callback);
             stringOutput.SetResult("");
             return stringOutput;
@@ -131,7 +131,7 @@ namespace ACPAnalyticsTestApp.iOS
         public TaskCompletionSource<string> GetVisitorIdentifier()
         {
             stringOutput = new TaskCompletionSource<string>();
-            Action<NSString> callback = new Action<NSString>(handleCallback);
+            var callback = new Action<NSString>(handleCallback);
             ACPAnalytics.GetVisitorIdentifier(callback);
             stringOutput.SetResult("");
             return stringOutput;
@@ -140,7 +140,7 @@ namespace ACPAnalyticsTestApp.iOS
         public TaskCompletionSource<string> GetQueueSize()
         {
             stringOutput = new TaskCompletionSource<string>();
-            Action<nuint> callback = new Action<nuint>(handleCallback);
+            var callback = new Action<nuint>(handleCallback);
             ACPAnalytics.GetQueueSize(callback);
             stringOutput.SetResult("");
             return stringOutput;
