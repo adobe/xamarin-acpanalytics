@@ -39,7 +39,7 @@ namespace ACPAnalyticsiOSUnitTests
         public void GetQueueSize_Returns_CorrectQueueSize()
         {
             // setup
-            CountdownEvent latch = new CountdownEvent(1);
+            var latch = new CountdownEvent(1);
             nuint queueSize = 0;
             var config = new NSMutableDictionary<NSString, NSObject>
             {
@@ -64,7 +64,7 @@ namespace ACPAnalyticsiOSUnitTests
         public void ClearQueue_Clears_QueuedHits()
         {
             // setup
-            CountdownEvent latch = new CountdownEvent(1);
+            var latch = new CountdownEvent(1);
             nuint queueSize = 0;
             var config = new NSMutableDictionary<NSString, NSObject>
             {

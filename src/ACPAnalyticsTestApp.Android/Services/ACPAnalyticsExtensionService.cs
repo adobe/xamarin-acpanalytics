@@ -68,7 +68,7 @@ namespace ACPAnalyticsTestApp.Droid
         public TaskCompletionSource<string> TrackAction()
         {
             stringOutput = new TaskCompletionSource<string>();
-            Dictionary<string, string> data = new Dictionary<string, string>();
+            var data = new Dictionary<string, string>();
             data.Add("key", "value");
             ACPCore.TrackAction("action", data);
             stringOutput.SetResult("completed");
@@ -78,7 +78,7 @@ namespace ACPAnalyticsTestApp.Droid
         public TaskCompletionSource<string> TrackState()
         {
             stringOutput = new TaskCompletionSource<string>();
-            Dictionary<string, string> data = new Dictionary<string, string>();
+            var data = new Dictionary<string, string>();
             data.Add("key", "value");
             ACPCore.TrackState("state", data);
             stringOutput.SetResult("completed");
@@ -88,7 +88,7 @@ namespace ACPAnalyticsTestApp.Droid
         public TaskCompletionSource<string> UpdateConfig()
         {
             stringOutput = new TaskCompletionSource<string>();
-            Dictionary<string, Java.Lang.Object> config = new Dictionary<string, Java.Lang.Object>();
+            var config = new Dictionary<string, Java.Lang.Object>();
             config.Add("someConfigKey", "configValue");
             config.Add("analytics.batchLimit", 5);
             ACPCore.UpdateConfiguration(config);

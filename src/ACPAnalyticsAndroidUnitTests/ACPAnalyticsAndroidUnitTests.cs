@@ -51,7 +51,7 @@ namespace ACPAnalyticsAndroidUnitTests
             // setup
             latch = new CountdownEvent(1);
             int expectedSize = 2;
-            Dictionary<string, Java.Lang.Object> config = new Dictionary<string, Java.Lang.Object>();
+            var config = new Dictionary<string, Java.Lang.Object>();
             config.Add("analytics.batchLimit", 5);
             ACPCore.UpdateConfiguration(config);
             ACPCore.TrackAction("action", null);
@@ -70,7 +70,7 @@ namespace ACPAnalyticsAndroidUnitTests
             // setup
             int expectedSize = 3;
             latch = new CountdownEvent(1);
-            Dictionary<string, Java.Lang.Object> config = new Dictionary<string, Java.Lang.Object>();
+            var config = new Dictionary<string, Java.Lang.Object>();
             config.Add("analytics.batchLimit", 5);
             ACPCore.UpdateConfiguration(config);
             ACPCore.TrackAction("action", null);

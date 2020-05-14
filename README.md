@@ -67,7 +67,7 @@ ACPCore.Start(null);
 **iOS**
 
 ```c#
-Action<NSString> callback = new Action<NSString>(handleCallback);
+var callback = new Action<NSString>(handleCallback);
 ACPAnalytics.GetTrackingIdentifier(callback);
 
 private void handleCallback(NSString content)
@@ -110,7 +110,7 @@ ACPAnalytics.SendQueuedHits();
 **iOS**
 
 ```c#
-Action<nuint> callback = new Action<nuint>(handleCallback);
+var callback = new Action<nuint>(handleCallback);
 ACPAnalytics.GetQueueSize(callback);
 
 private void handleCallback(nuint value)
@@ -160,7 +160,7 @@ ACPAnalytics.SetVisitorIdentifier("testVisitorIdentifier");
 **iOS**
 
 ```c#
-Action<NSString> callback = new Action<NSString>(handleCallback);
+var callback = new Action<NSString>(handleCallback);
 ACPAnalytics.GetVisitorIdentifier(callback);
 
 private void handleCallback(NSString content)
