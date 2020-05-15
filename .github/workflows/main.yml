@@ -1,0 +1,42 @@
+name: CI on push and pull
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:  
+  Android:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Android
+      run: |
+        cd src/
+        nuget sources add -name nugetizer3000 -Source https://ci.appveyor.com/nuget/nugetizer3000
+        nuget restore
+        cd Adobe.ACPAnalytics.Android/
+        msbuild -t:pack
+    # upload built Android packages
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Adobe.ACPCore.Android.0.0.1.nupkg
+        path: bin/Adobe.ACPAnalytics.Android.0.0.1.nupkg
+        
+  iOS:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: iOS
+      run: |
+        cd src/
+        nuget sources add -name nugetizer3000 -Source https://ci.appveyor.com/nuget/nugetizer3000
+        nuget restore
+        cd Adobe.ACPAnalytics.iOS/
+        msbuild -t:build
+    # upload built iOS packages
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Adobe.ACPAnalytics.iOS.0.0.1.nupkg
+        path: bin/Adobe.ACPAnalytics.iOS.0.0.1.nupkg
