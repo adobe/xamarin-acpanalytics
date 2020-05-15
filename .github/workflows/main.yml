@@ -21,7 +21,7 @@ jobs:
     # upload built Android packages
     - uses: actions/upload-artifact@v2
       with:
-        name: Adobe.ACPCore.Android.0.0.1.nupkg
+        name: Adobe.ACPAnalytics.Android.0.0.1.nupkg
         path: bin/Adobe.ACPAnalytics.Android.0.0.1.nupkg
         
   iOS:
