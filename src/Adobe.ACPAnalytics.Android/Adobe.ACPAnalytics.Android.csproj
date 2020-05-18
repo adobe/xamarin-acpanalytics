@@ -23,7 +23,7 @@
     <PackageVersion>0.0.1</PackageVersion>
     <Authors>Adobe Inc.</Authors>
     <Copyright>Copyright 2020 Adobe All Rights Reserved. NOTICE: Adobe permits you to use, modify, and distribute this file in accordance with the terms of the Adobe license agreement accompanying it.If you have received this file from a source other than Adobe, then your use, modification, or distribution of it requires the prior written permission of Adobe. This file has been modified from its original form.The original license can be viewed in the NOTICES.txt file.</Copyright>
-    <PackageLicenseUrl>https://github.com/adobe/xamarin-acpanalytics/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Owners>Adobe Inc.</Owners>
     <PackageProjectUrl>https://github.com/adobe/xamarin-acpanalytics</PackageProjectUrl>
     <Summary>Adobe Experience Platform - Analytics plugin for Xamarin Android.</Summary>
@@ -64,6 +64,9 @@
   <ItemGroup>
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="">
+      <Link>LICENSE</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <TransformFile Include="Transforms\Metadata.xml" />
