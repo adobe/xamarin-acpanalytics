@@ -86,9 +86,6 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoTouch.NUnitLite" />
-    <Reference Include="Adobe.ACPCore.iOS">
-      <HintPath>..\ACPAnalyticsTestApp.iOS\Bindings\Adobe.ACPCore.iOS.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -101,6 +98,9 @@
     <Compile Include="Main.cs" />
     <Compile Include="UnitTestAppDelegate.cs" />
     <Compile Include="ACPAnalyticsiOSUnitTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Adobe.ACPCore.iOS" Version="0.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Adobe.ACPAnalytics.iOS\Adobe.ACPAnalytics.iOS.csproj">

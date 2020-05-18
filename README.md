@@ -21,10 +21,6 @@ Xamarin development requires the installation of [Microsoft Visual Studio](https
 
 **Package Manager Installation**
 
-{% hint style="warning" %}
-The ACPCore Xamarin NuGet package must be added to your project as it is a dependency for all AEP SDK plugins.
-{% endhint %}
-
 The ACPAnalytics Xamarin NuGet package for Android or iOS can be added to your project by right clicking the *_"Packages"_* folder within the project you are working on then selecting *_"Manage NuGet Packages"_*. In the window that opens, ensure that your selected source is `nuget.org` and search for *_"Adobe.ACP"_*. After selecting the Xamarin AEP SDK packages that are required, click on the *_"Add Packages"_* button.
 
 **Manual installation**
