@@ -18,11 +18,11 @@ jobs:
         nuget restore
         cd Adobe.ACPAnalytics.Android/
         msbuild -t:pack
-    # upload built Android packages
-    - uses: actions/upload-artifact@v2
-      with:
-        name: Adobe.ACPAnalytics.Android.0.0.1.nupkg
-        path: bin/Adobe.ACPAnalytics.Android.0.0.1.nupkg
+    # upload built Android packages (currently disabled)
+#     - uses: actions/upload-artifact@v2
+#       with:
+#         name: Adobe.ACPAnalytics.Android.0.0.1.nupkg
+#         path: bin/Adobe.ACPAnalytics.Android.0.0.1.nupkg
         
   iOS:
     runs-on: macos-latest
@@ -35,8 +35,8 @@ jobs:
         nuget restore
         cd Adobe.ACPAnalytics.iOS/
         msbuild -t:build
-    # upload built iOS packages
-    - uses: actions/upload-artifact@v2
-      with:
-        name: Adobe.ACPAnalytics.iOS.0.0.1.nupkg
-        path: bin/Adobe.ACPAnalytics.iOS.0.0.1.nupkg
+    # upload built iOS packages (currently disabled)
+#     - uses: actions/upload-artifact@v2
+#       with:
+#         name: Adobe.ACPAnalytics.iOS.0.0.1.nupkg
+#         path: bin/Adobe.ACPAnalytics.iOS.0.0.1.nupkg
