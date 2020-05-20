@@ -15,7 +15,9 @@
 
 ## Prerequisites  
 
-Xamarin development requires the installation of [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/). An [Apple developer account](https://developer.apple.com/programs/enroll/) and the latest version of Xcode (available from the App Store) are required if you are [building an iOS app](https://docs.microsoft.com/en-us/visualstudio/mac/installation?view=vsmac-2019).
+Xamarin development requires the installation of [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/). Information regarding installation for Xamarin development is available for [Mac](https://docs.microsoft.com/en-us/visualstudio/mac/installation?view=vsmac-2019) or [Windows](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019).
+
+An [Apple developer account](https://developer.apple.com/programs/enroll/) and the latest version of Xcode (available from the App Store) are required if you are [building an iOS app](https://docs.microsoft.com/en-us/visualstudio/mac/installation?view=vsmac-2019).
 
 ## Installation
 
@@ -40,6 +42,16 @@ make release
 The created NuGet packages can be found in the `bin` directory. This directory can be added as a local nuget source and packages within the directory can be added to a Xamarin project following the steps in the "Package Manager Installation" above.
 
 ## Usage
+
+The ACPAnalytics binding can be opened by loading the ACPAnalyticsBinding.sln with Visual Studio. The following targets are available in the solution:
+
+- Adobe.ACPAnalytics.iOS - The ACPAnalytics iOS bindings.
+- Adobe.ACPAnalytics.Android - The ACPAnalytics Android binding.
+- ACPAnalyticsTestApp - The Xamarin.Forms base app used by the iOS and Android test apps.
+- ACPAnalyticsTestApp.iOS - The Xamarin.Forms based iOS manual test app.
+- ACPAnalyticsTestApp.Android - The Xamarin.Forms based Android manual test app.
+- ACPAnalyticsiOSUnitTests - iOS unit test app.
+- ACPAnalyticsAndroidUnitTests - Android unit test app.
 
 ### [Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
 
