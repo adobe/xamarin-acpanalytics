@@ -2,7 +2,8 @@
 # Adobe Experience Platform - Analytics plugin for Xamarin apps
 
 ![CI](https://github.com/adobe/xamarin-acpanalytics/workflows/CI/badge.svg)
-
+[![NuGet](https://buildstats.info/nuget/Adobe.ACPAnalytics.Android)](https://www.nuget.org/packages/Adobe.ACPAnalytics.Android/)
+[![NuGet](https://buildstats.info/nuget/Adobe.ACPAnalytics.iOS)](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/)
 [![GitHub](https://img.shields.io/github/license/adobe/xamarin-acpanalytics)](https://github.com/adobe/xamarin-acpanalytics/blob/master/LICENSE)
 
 - [Prerequisites](#prerequisites)  
