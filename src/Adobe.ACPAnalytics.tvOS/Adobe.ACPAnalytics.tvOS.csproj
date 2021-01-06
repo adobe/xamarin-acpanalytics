@@ -43,9 +43,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Xamarin.TVOS" />
-    <Reference Include="Adobe.ACPCore.tvOS">
-      <HintPath>..\packages\Adobe.ACPCore.tvOS.0.0.1\lib\xamarintvos10\Adobe.ACPCore.tvOS.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +65,15 @@
   <ItemGroup>
     <BundleResource Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+     <PackageReference Include="Adobe.ACPCore.tvOS" Version="0.0.1" />
+     <PackageReference Include="NuGet.Build.Packaging">
+       <Version>0.2.3</Version>
+       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+       <PrivateAssets>all</PrivateAssets>
+     </PackageReference>
+  </ItemGroup>
+    
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\TVOS\Xamarin.TVOS.ObjCBinding.CSharp.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.targets')" />
 </Project>
