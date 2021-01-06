@@ -19,6 +19,7 @@
     <Summary>Adobe Experience Platform - Analytics Plugin for Xamarin tvOS.</Summary>
     <Title>Adobe.ACPAnalytics.tvOS</Title>
     <Description>Adobe Experience Platform - Xamarin Plugin for tvOS</Description>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,15 +55,6 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\..\..\acp-sdks-2.4.0-ACPAnalytics\libACPAnalytics_tvOS.a">
-      <Kind>Static</Kind>
-      <ForceLoad>True</ForceLoad>
-      <IsCxx>True</IsCxx>
-      <LinkerFlags>-lsqlite3 -lc++ -lz</LinkerFlags>
-      <Frameworks>UIKit SystemConfiguration</Frameworks>
-    </NativeReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +66,15 @@
      </PackageReference>
   </ItemGroup>
     
+  <ItemGroup>
+    <NativeReference Include="libACPAnalytics_tvOS.a">
+      <Kind>Static</Kind>
+      <ForceLoad>True</ForceLoad>
+      <Frameworks>UiKit SystemConfiguration</Frameworks>
+      <IsCxx>True</IsCxx>
+      <LinkerFlags>-lc++ -lsqlite3 -lz</LinkerFlags>
+    </NativeReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\TVOS\Xamarin.TVOS.ObjCBinding.CSharp.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.targets')" />
 </Project>
