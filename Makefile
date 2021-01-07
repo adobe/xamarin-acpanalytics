@@ -3,6 +3,7 @@
 setup:
 	cd src/Adobe.ACPAnalytics.Android/ && msbuild -t:restore
 	cd src/Adobe.ACPAnalytics.iOS/ && msbuild -t:restore
+	cd src/Adobe.ACPAnalytics.tvOS/ && msbuild -t:restore
 
 msbuild-clean:
 	cd src && msbuild -t:clean
@@ -12,6 +13,8 @@ clean-folders:
 	rm -rf src/Adobe.ACPAnalytics.Android/bin/Debug
 	rm -rf src/Adobe.ACPAnalytics.iOS/bin/Debug
 	rm -rf src/Adobe.ACPAnalytics.iOS/obj
+	rm -rf src/Adobe.ACPAnalytics.tvOS/bin/Debug
+	rm -rf src/Adobe.ACPAnalytics.tvOS/obj
 	rm -rf bin
 
 clean: msbuild-clean clean-folders setup
@@ -21,6 +24,8 @@ clean: msbuild-clean clean-folders setup
 release:
 	cd src/Adobe.ACPAnalytics.Android/ && msbuild -t:pack
 	cd src/Adobe.ACPAnalytics.iOS/ && msbuild -t:build	
+	cd src/Adobe.ACPAnalytics.tvOS/ && msbuild -t:build
 	mkdir bin
 	cp src/Adobe.ACPAnalytics.Android/bin/Debug/*.nupkg ./bin
 	cp src/Adobe.ACPAnalytics.iOS/bin/Debug/*.nupkg ./bin
+	cp src/Adobe.ACPAnalytics.tvOS/bin/Debug/*.nupkg ./bin
