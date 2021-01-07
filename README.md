@@ -4,6 +4,7 @@
 ![CI](https://github.com/adobe/xamarin-acpanalytics/workflows/CI/badge.svg)
 [![NuGet](https://buildstats.info/nuget/Adobe.ACPAnalytics.Android)](https://www.nuget.org/packages/Adobe.ACPAnalytics.Android/)
 [![NuGet](https://buildstats.info/nuget/Adobe.ACPAnalytics.iOS)](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/)
+[![NuGet](https://buildstats.info/nuget/Adobe.ACPAnalytics.tvOS)](https://www.nuget.org/packages/Adobe.ACPAnalytics.tvOS/)
 [![GitHub](https://img.shields.io/github/license/adobe/xamarin-acpanalytics)](https://github.com/adobe/xamarin-acpanalytics/blob/master/LICENSE)
 
 - [Prerequisites](#prerequisites)  
@@ -18,13 +19,13 @@
 
 Xamarin development requires the installation of [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/). Information regarding installation for Xamarin development is available for [Mac](https://docs.microsoft.com/en-us/visualstudio/mac/installation?view=vsmac-2019) or [Windows](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019).
 
-An [Apple developer account](https://developer.apple.com/programs/enroll/) and the latest version of Xcode (available from the App Store) are required if you are [building an iOS app](https://docs.microsoft.com/en-us/visualstudio/mac/installation?view=vsmac-2019).
+An [Apple developer account](https://developer.apple.com/programs/enroll/) and the latest version of Xcode (available from the App Store) are required if you are [building an iOS or tvOS app](https://docs.microsoft.com/en-us/visualstudio/mac/installation?view=vsmac-2019).
 
 ## Installation
 
 **Package Manager Installation**
 
-The ACPAnalytics Xamarin NuGet package for Android or iOS can be added to your project by right clicking the *_"Packages"_* folder within the project you are working on then selecting *_"Manage NuGet Packages"_*. In the window that opens, ensure that your selected source is `nuget.org` and search for *_"Adobe.ACP"_*. After selecting the Xamarin AEP SDK packages that are required, click on the *_"Add Packages"_* button. After exiting the "Add Packages" menu, right click the main solution or the "Packages" folder and select "Restore" to ensure the added packages are downloaded.
+The ACPAnalytics Xamarin NuGet package for Android or iOS or tvOS can be added to your project by right clicking the *_"Packages"_* folder within the project you are working on then selecting *_"Manage NuGet Packages"_*. In the window that opens, ensure that your selected source is `nuget.org` and search for *_"Adobe.ACP"_*. After selecting the Xamarin AEP SDK packages that are required, click on the *_"Add Packages"_* button. After exiting the "Add Packages" menu, right click the main solution or the "Packages" folder and select "Restore" to ensure the added packages are downloaded.
 
 **Manual installation**
 
@@ -47,9 +48,11 @@ The created NuGet packages can be found in the `bin` directory. This directory c
 The ACPAnalytics binding can be opened by loading the ACPAnalyticsBinding.sln with Visual Studio. The following targets are available in the solution:
 
 - Adobe.ACPAnalytics.iOS - The ACPAnalytics iOS bindings.
+- Adobe.ACPAnalytics.tvOS - The ACPAnalytics tvOS bindings.
 - Adobe.ACPAnalytics.Android - The ACPAnalytics Android binding.
 - ACPAnalyticsTestApp - The Xamarin.Forms base app used by the iOS and Android test apps.
 - ACPAnalyticsTestApp.iOS - The Xamarin.Forms based iOS manual test app.
+- ACPAnalyticsTestApp.tvOS - The Storyboard based tvOS manual test app.
 - ACPAnalyticsTestApp.Android - The Xamarin.Forms based Android manual test app.
 - ACPAnalyticsiOSUnitTests - iOS unit test app.
 - ACPAnalyticsAndroidUnitTests - Android unit test app.
