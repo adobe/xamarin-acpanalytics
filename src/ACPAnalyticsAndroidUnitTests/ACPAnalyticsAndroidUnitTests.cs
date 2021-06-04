@@ -42,7 +42,7 @@ namespace ACPAnalyticsAndroidUnitTests
         public void GetACPAnalyticsExtensionVersion_Returns_CorrectVersion()
         {
             // verify
-            Assert.That(ACPAnalytics.ExtensionVersion(), Is.EqualTo("1.2.4"));
+            Assert.That(ACPAnalytics.ExtensionVersion(), Is.EqualTo("1.2.6"));
         }
 
         [Test]
