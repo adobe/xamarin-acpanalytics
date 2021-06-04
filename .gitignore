@@ -341,3 +341,5 @@ src/ACPAnalyticsTestApp.Android/Assets/AboutAssets.txt
 src/ACPAnalyticsTestApp.Android/Resources/AboutResources.txt
 src/ACPAnalyticsAndroidUnitTests/Assets/AboutAssets.txt
 src/ACPAnalyticsAndroidUnitTests/Resources/AboutResources.txt
+
+acp-sdk/
