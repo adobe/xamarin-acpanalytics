@@ -169,7 +169,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-     <PackageReference Include="Adobe.ACPCore.tvOS" Version="1.0.0" />
+     <PackageReference Include="Adobe.ACPCore.tvOS" Version="1.0.1" />
   </ItemGroup>
     
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\TVOS\Xamarin.TVOS.CSharp.targets" />

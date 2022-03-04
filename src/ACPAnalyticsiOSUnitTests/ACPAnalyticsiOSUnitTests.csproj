@@ -100,7 +100,7 @@
     <Compile Include="ACPAnalyticsiOSUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Adobe.ACPCore.iOS" Version="1.0.0" />
+    <PackageReference Include="Adobe.ACPCore.iOS" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Adobe.ACPAnalytics.iOS\Adobe.ACPAnalytics.iOS.csproj">

@@ -55,9 +55,9 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
-    <PackageReference Include="Adobe.ACPCore.Android" Version="0.0.1" />
-    <PackageReference Include="Adobe.ACPIdentity.Android" Version="0.0.1" />
-    <PackageReference Include="Adobe.ACPLifecycle.Android" Version="0.0.1" />
+    <PackageReference Include="Adobe.ACPCore.Android" Version="1.1.0" />
+    <PackageReference Include="Adobe.ACPIdentity.Android" Version="1.1.0" />
+    <PackageReference Include="Adobe.ACPLifecycle.Android" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -97,7 +97,6 @@
       <Name>ACPAnalyticsTestApp</Name>
     </ProjectReference>
     <ProjectReference Include="..\Adobe.ACPAnalytics.Android\Adobe.ACPAnalytics.Android.csproj">
-      <Project>{F48AD989-239B-4075-92D6-E6707EF4FF02}</Project>
       <Name>Adobe.ACPAnalytics.Android</Name>
     </ProjectReference>
   </ItemGroup>
