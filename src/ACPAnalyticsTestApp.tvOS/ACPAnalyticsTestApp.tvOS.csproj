@@ -161,13 +161,15 @@
     <PackageReference Include="Xamarin.Essentials">
       <Version>1.3.1</Version>
     </PackageReference>
-    <PackageReference Include="Adobe.ACPAnalytics.tvOS">
-      <Version>1.0.1</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
      <PackageReference Include="Adobe.ACPCore.tvOS" Version="1.0.1" />
   </ItemGroup>
     
+  <ItemGroup>
+    <ProjectReference Include="..\Adobe.ACPAnalytics.tvOS\Adobe.ACPAnalytics.tvOS.csproj">
+      <Name>Adobe.ACPAnalytics.tvOS</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\TVOS\Xamarin.TVOS.CSharp.targets" />
 </Project>
