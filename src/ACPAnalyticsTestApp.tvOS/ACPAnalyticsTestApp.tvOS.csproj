@@ -158,19 +158,18 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Adobe.ACPAnalytics.tvOS\Adobe.ACPAnalytics.tvOS.csproj">
-      <Project>{C0FB21D7-E460-4406-B930-64187D37B514}</Project>
-      <Name>Adobe.ACPAnalytics.tvOS</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Xamarin.Essentials">
       <Version>1.3.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-     <PackageReference Include="Adobe.ACPCore.tvOS" Version="1.0.0" />
+     <PackageReference Include="Adobe.ACPCore.tvOS" Version="1.0.1" />
   </ItemGroup>
     
+  <ItemGroup>
+    <ProjectReference Include="..\Adobe.ACPAnalytics.tvOS\Adobe.ACPAnalytics.tvOS.csproj">
+      <Name>Adobe.ACPAnalytics.tvOS</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\TVOS\Xamarin.TVOS.CSharp.targets" />
 </Project>
