@@ -60,7 +60,7 @@
   <ItemGroup>
      <PackageReference Include="Adobe.ACPCore.tvOS" Version="1.0.1" />
      <PackageReference Include="NuGet.Build.Packaging">
-       <Version>0.2.3</Version>
+       <Version>0.2.2</Version>
        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
        <PrivateAssets>all</PrivateAssets>
      </PackageReference>
