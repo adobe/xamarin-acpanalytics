@@ -32,7 +32,7 @@ namespace ACPAnalyticsiOSUnitTests
         public void GetACPAnalyticsExtensionVersion_Returns_CorrectVersion()
         {
             // verify
-            Assert.That(ACPAnalytics.ExtensionVersion(), Is.EqualTo("2.5.1"));
+            Assert.That(ACPAnalytics.ExtensionVersion(), Is.EqualTo("2.5.2"));
         }
 
         [Test]
